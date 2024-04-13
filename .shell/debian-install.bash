@@ -9,6 +9,7 @@ _packages=(
 
     bspwm
     sxhkd
+    picom
 )
 
 #
