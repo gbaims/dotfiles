@@ -1,0 +1,2 @@
+xrandr --output Virtual-1 --mode 1600x900
+exec bspwm
