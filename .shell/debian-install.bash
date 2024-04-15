@@ -11,6 +11,8 @@ _packages=(
     xsettingsd
     sxhkd
     picom
+
+    kitty
 )
 
 #
