@@ -1,5 +1,6 @@
 #! /bin/sh
 
+pgrep -x xsettingsd > /dev/null || xsettingsd &
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x picom > /dev/null || picom &
 

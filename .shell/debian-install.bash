@@ -8,6 +8,7 @@ _packages=(
     xserver-xorg-video-all
 
     bspwm
+    xsettingsd
     sxhkd
     picom
 )
