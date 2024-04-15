@@ -56,5 +56,14 @@ install_pkgs() {
     fi
 }
 
+install_starship() {
+    _echo "[*] Installing starship prompt"
+    curl -sS https://starship.rs/install.sh  | sh -s -- --yes
+    if [[ "$?" != '0' ]]; then
+        _echo "[!] Failed to install Starship prompt" 1
+    fi
+}
+
 upgrade_system
 install_pkgs
+install_starship
