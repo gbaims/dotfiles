@@ -1,0 +1,114 @@
+##################################
+#         LANGUAGE SERVERS       #
+##################################
+
+
+# Emmet
+[language-server.emmet]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+
+# Deno
+[language-server.deno]
+required-root-patterns = ["deno.lock"]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno.config.deno]
+enable = true
+cacheOnSave = true
+inlayHints.enumMemberValues.enabled = true
+inlayHints.functionLikeReturnTypes.enabled = true
+inlayHints.parameterNames.enabled = "all"
+inlayHints.parameterNames.suppressWhenArgumentMatchesName = false
+inlayHints.parameterTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled  = true
+inlayHints.variableTypes.enabled = true
+inlayHints.variableTypes.suppressWhenTypeMatchesName = false
+
+
+# Vscode Typescript Language Server
+
+[language-server.vtsls]
+required-root-patterns = ["pnpm-lock.yaml"]
+command = "vtsls"
+args = ["--stdio"]
+
+[language-server.vtsls.config]
+hostInfo = "helix"
+typescript.updateImportsOnFileMove.enabled = "always"
+typescript.suggest.completeFunctionCalls = true
+typescript.tsserver.enableTracing = true
+typescript.inlayHints.parameterNames.enabled = "all"
+typescript.inlayHints.parameterTypes.enabled = true
+typescript.inlayHints.variableTypes.enabled = true
+typescript.inlayHints.propertyDeclarationTypes.enabled = true
+typescript.inlayHints.functionLikeReturnTypes = true
+typescript.inlayHints.enumMemberValues.enabled = true
+typescript.format.enable = false
+typescript.format.semicolons = "remove"
+typescript.preferences.importModuleSpecifier = "non-relative"
+typescript.preferences.importModuleSpecifierEnding = "auto"
+typescript.tsserver.experimental.enableProjectDiagnostics = true
+typescript.tsserver.pluginPaths = ["typescript-plugin-css-modules", "./node_modules"]
+vtsls.autoUseWorkspaceTsdk = true
+
+
+# ESLint
+[language-server.vscode-eslint-language-server.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+
+# Tailwind CSS
+[language-server.tailwindcss]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+
+##################################
+#           LANGUAGES            #
+##################################
+
+# CSS
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "tailwindcss"]
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+auto-format = true
+
+
+# JSON
+[[language]]
+name = "json"
+formatter = { command = 'prettier', args = ["--parser", "json"] }
+auto-format = true
+
+[[language]]
+name = "jsonc"
+formatter = { command = 'prettier', args = ["--parser", "json"] }
+auto-format = true
+
+
+# Typescript
+[[language]]
+name = "typescript"
+roots = [ "package.json", "tsconfig.json", "deno.json"]
+language-servers = ["deno", "vtsls", "vscode-eslint-language-server"]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+roots = [ "package.json", "tsconfig.json", "deno.json"]
+language-servers = ["deno", "vtsls", "vscode-eslint-language-server", "emmet", "tailwindcss"]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
