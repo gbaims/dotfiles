@@ -33,3 +33,9 @@ mode.select = "SELECT"
 left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
 right = ["workspace-diagnostics", "selections", "register", "position", "file-encoding"]
 
+# Mapping
+[keys.normal]
+C-r = ":reload-all"
+C-s = ":write"
+A-2 = [ "file_explorer"]
+A-3 = [ ":write-all", ":insert-output lazygit >/dev/tty", ":redraw", ":reload-all" ]
