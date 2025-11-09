@@ -1,0 +1,32 @@
+inherits = "rose_pine"
+
+"constructor" = "foam"
+
+"constant.builtin" = "rose"
+"constant.builtin.boolean" = "rose"
+"constant.character" = "rose"
+"constant.character.escape" = "rose"
+"constant.numeric" = "rose"
+"string" = "rose"
+
+"function" = "foam"
+"function.builtin" = "foam"
+
+"function.macro" = "pine"
+
+"type" = "iris"
+
+"info" = "gold"
+"hint" = "subtle"
+"diagnostic.info" = { underline = { color = "gold", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "subtle", style = "curl" } }
+"diagnostic.error" = { underline = { color = "love", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "love", style = "curl" } }
+
+"constant" = "text"
+"variable" = "text"
+"variable.builtin" = "text"
+"variable.parameter" = "text"
+"variable.other.member" = "text"
+
+"ui.virtual.indent-guide" = { fg = "overlay" }
