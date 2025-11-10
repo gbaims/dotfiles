@@ -82,19 +82,22 @@ args = ["--stdio"]
 [[language]]
 name = "css"
 language-servers = ["vscode-css-language-server", "tailwindcss"]
-formatter = { command = 'prettier', args = ["--parser", "css"] }
+# formatter = { command = 'prettier', args = ["--parser", "css"] }
+formatter = { command = 'prettierd', args = [".css"] }
 auto-format = true
 
 
 # JSON
 [[language]]
 name = "json"
-formatter = { command = 'prettier', args = ["--parser", "json"] }
+# formatter = { command = 'prettier', args = ["--parser", "json"] }
+formatter = { command = 'prettierd', args = [".json"] }
 auto-format = true
 
 [[language]]
 name = "jsonc"
-formatter = { command = 'prettier', args = ["--parser", "json"] }
+# formatter = { command = 'prettier', args = ["--parser", "json"] }
+formatter = { command = 'prettierd', args = [".jsonc"] }
 auto-format = true
 
 
@@ -103,12 +106,14 @@ auto-format = true
 name = "typescript"
 roots = [ "package.json", "tsconfig.json", "deno.json"]
 language-servers = ["deno", "vtsls", "vscode-eslint-language-server"]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+formatter = { command = 'prettierd', args = [".ts"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
 roots = [ "package.json", "tsconfig.json", "deno.json"]
 language-servers = ["deno", "vtsls", "vscode-eslint-language-server", "emmet", "tailwindcss"]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+formatter = { command = 'prettierd', args = [".tsx"] }
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
